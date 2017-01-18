@@ -48,8 +48,12 @@ def get_user_input(info = ''):
     return user_in
 
 def display_Results_to_user(user_output):
+    print('.....................................................................')
     print("%s |   %s   |   %s   |   %s  " %("Symbol", "Price", "Date","Time" ))
     print("  " + user_output[0] +"      " + user_output[1] + "        " + user_output[2]+"      " + user_output[3])
+    print()
+    print('.....................................................................')
+    print("Hello Estimed user for more accurate result USE symbols only: E.g FaceBook -> FB")
     return
 
 def start_program_logic():
