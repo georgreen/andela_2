@@ -47,16 +47,18 @@ def get_user_input(info = ''):
 
     return user_in
 
-def display_Results_to_user(user_output):
+def display_Results_to_user(user_output, demo = None):
     print('.....................................................................')
     print("%s |   %s   |   %s   |   %s  " %("Symbol", "Price", "Date","Time" ))
     print("  " + user_output[0] +"      " + user_output[1] + "        " + user_output[2]+"      " + user_output[3])
     print()
     print('.....................................................................')
-    print("Hello Estimed user for more accurate result USE symbols only: E.g FaceBook -> FB")
+    if(demo == True or user_output.__contains__("N/A")):
+        print("Hello Esteemed user for more accurate result USE symbols only: E.g FaceBook -> FB")
     return
 
 def start_program_logic():
+    demo = True
     while(True):
         #get user Input
         user_in = get_user_input()
@@ -71,12 +73,12 @@ def start_program_logic():
         user_output = parse_output(info)
 
         #Display out parse_output
-        display_Results_to_user(user_output)
+        display_Results_to_user(user_output, demo)
 
         #Ask if they want to quit
         user_in = get_user_input('end')
         if user_in == 'y' or user_in == 'yes':
-            pass
+            demo = False
         else:
             break
 
